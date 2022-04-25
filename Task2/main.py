@@ -1,13 +1,13 @@
-def Rotations(arr,n,k):
-    arr_of_rotates=[0] * n
-    for i in range(n):
-        arr_of_rotates[i] = arr[i]
+z=200/100  #z=2.0
 
-    for i in range(n):
-        arr_of_rotates[(i+k)%n]=arr[i]
 
-    return (arr_of_rotates)
-arr = list(map(int, input("Enter the array: ").split()))
-n=len(arr)
-k= int(input("Enter the number of rotations: "))
-print("The array after Rotations: ",Rotations(arr,n,k))
+k=(1.1+2.2!=3.3 )
+# 1.1 = 1.0001100110011001101 ,, 2.2 = 10.00110011001100110011
+# so, the machine will add the two binary numbers together
+# and the value will be approximately but not exactly equal 3.3
+# so K = True
+
+
+y=  k and isinstance(z,int)
+# y = False
+#as z is not integer
