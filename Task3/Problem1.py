@@ -1,5 +1,3 @@
-#Given a list of integers write a function to sort the list 
-#and another to return the first and last appearance of a given target number in the sorted list
 def First_Last_Index(arr,n,target):
     index1= arr.index(target)
     arr.reverse()
@@ -11,7 +9,16 @@ def Sorting(arr,n,target):
     arr.sort()
     return(First_Last_Index(arr,n,target))
 
-arr = list(map(int, input("Enter the array: ").split()))
-target=int(input("Enter the target number: "))
-n=len(arr)
-print(Sorting(arr,n,target))
+is_even = lambda num : num%2
+
+def even_count(arr):
+    count=0
+    for i in range(len(arr)):
+        if (is_even(arr[i])==0):
+            count+=1
+    return count
+
+
+if __name__ == '__main__':
+    arr = list(map(int, input("Enter the array: ").split()))
+    print(even_count(arr))
