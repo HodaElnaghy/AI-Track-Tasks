@@ -1,7 +1,7 @@
 def Sublists(arr,n):
 
     Smallest_array=[0]*2
-    Largest_array=[0]*(n-2)
+    Largest_array=[0]*(n-1)
     Smallest_sum=0
     Largest_sum=0
     arr.sort()
@@ -12,8 +12,8 @@ def Sublists(arr,n):
         Smallest_sum += Smallest_array[i]
 
     n = len(arr)
-    for i in range(2,n):
-        Largest_array[i-2]=arr[i]
+    for i in range(1,n):
+        Largest_array[i-1]=arr[i]
         Largest_sum += arr[i]
 
 
