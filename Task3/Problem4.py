@@ -1,23 +1,40 @@
 def Sublists(arr,n):
+    arr.sort()
+    Smallest_array=[]
+    Smallest_array_count=1
 
-    Smallest_array=[0]*2
-    Largest_array=[0]*(n-1)
+    Largest_array=[]
+    Largest_array_count = 1
     Smallest_sum=0
     Largest_sum=0
-    arr.sort()
 
 
-    for i in range (2):
-        Smallest_array[i]=arr[i]
-        Smallest_sum += Smallest_array[i]
 
-    n = len(arr)
-    for i in range(1,n):
-        Largest_array[i-1]=arr[i]
-        Largest_sum += arr[i]
+    for i in range (n):
+        if(Smallest_array_count<3):
+            Smallest_array.append(arr[i])
+            Smallest_sum += Smallest_array[i]
+            Smallest_array_count+=1
+        elif (Smallest_sum > Smallest_sum + arr[i]):
+                Smallest_array.append(arr[i])
+                Smallest_sum += Smallest_array[i]
+        else: break
 
 
-    print ("The Large array: ",Largest_array," ,Sum = ",Largest_sum)
+    arr.sort(reverse=True)
+
+    for i in range (n):
+        if(Largest_array_count<3):
+            Largest_array.append(arr[i])
+            Largest_sum += Largest_array[i]
+            Largest_array_count+=1
+        elif (Largest_sum < Largest_sum + arr[i]):
+                Largest_array.append(arr[i])
+                Largest_sum += Largest_array[i]
+        else: break
+
+    print("The Large array: ", Largest_array, " ,Sum = ", Largest_sum)
+
     print("The Small array: ", Smallest_array," ,Sum = ",Smallest_sum)
 
 
@@ -26,14 +43,21 @@ def Sublists(arr,n):
 x=True
 y=True
 n=0
-while (n<4 or x==True):
+while(x==True or y==True):
     try:
         arr = list(map(int, input("Enter the array: ").split()))
         n = len(arr)
         x=False
     except:
-        print("Enter array of integers minimmun 4 numbers")
+        print("Enter array of integers minimmun 2 numbers")
+    if (n>1):
+        y=False
+
+print(Sublists(arr,n))
 
 
-Sublists(arr,n)
+
+
+
+
 
