@@ -7,7 +7,8 @@ def target_4(arr,target):
             for z in range(y+1,len(arr)):
 
                 for h in range(z+1, len(arr)):
-                    if (arr[x] + arr[y] + arr[z] + arr[h] == target):
+
+                    if (arr[x] + arr[y] + arr[z] + arr[h] == target) and len({arr[x],arr[y],arr[z],arr[h]}) >3:
 
                         return (arr[x], arr[y], arr[z],arr[h])
     return False
@@ -32,3 +33,4 @@ while(1):
         if (target>3):
             target-=1
         target1+=1
+
