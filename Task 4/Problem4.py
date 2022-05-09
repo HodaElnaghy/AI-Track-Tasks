@@ -21,10 +21,12 @@ target= int(input("enter target: "))
 target1=target+1
 while(1):
     if(target_4(arr,target)!=False):
+        print("target is:", target)
         print("Integers: ",target_4(arr,target))
         break
-    elif (target_4(arr,target)!=False):
-        print("Integers: ",target_4(arr, target))
+    elif (target_4(arr,target1)!=False):
+        print("target is:", target1)
+        print("Integers: ",target_4(arr, target1))
         break
     else:
         if (target>3):
