@@ -12,7 +12,7 @@ def standard_deviation_variance(arr):
         Variance += pow((arr[i]-Mean),2)
     Variance/=len(arr)
     Standard_Deviation=pow(Variance,0.5)
-    return "Variance: ",Variance,"Standard Deviation: ",Standard_Deviation
+    return "Variance: ",round(Variance,2),"Standard Deviation: ",round(Standard_Deviation,2)
 
 
 
